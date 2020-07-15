@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_hxyRoca4Eeq4i5opXHsqFA" label="ESB1" description="" language="java" technicalLabel="ESB1" creationDate="2020-07-15T18:07:47.118+0200" author="_hxyRosa4Eeq4i5opXHsqFA" productVersion="Talend MDM Platform-7.3.1.20200219_1130" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/ellyzgossoft/MDM&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DI" bigData="false">
+  <TalendProperties:Project xmi:id="_hxyRoca4Eeq4i5opXHsqFA" label="ESB1" description="" language="java" technicalLabel="ESB1" creationDate="2020-07-15T18:07:47.118+0200" author="_hxyRosa4Eeq4i5opXHsqFA" productVersion="Talend MDM Platform-7.3.1.20200219_1130" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/ellyzgossoft/MDM&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DI" itemsRelationVersion="1.3" bigData="false">
     <migrationTask xmi:id="_iP_QkMa4Eeq4i5opXHsqFA" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_hxyRosa4Eeq4i5opXHsqFA" login="admin@company.com" firstName="fdffdf" lastName="ffdf" type="DI" additionnalData="{}"/>
+  <TalendProperties:User xmi:id="_lJNgcMa4Eeq4i5opXHsqFA" login="user1@company.com" firstName="fdf" lastName="dfdf" type="DI" additionnalData="{}"/>
 </xmi:XMI>
