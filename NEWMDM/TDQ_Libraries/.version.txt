@@ -1,2 +1,0 @@
-#Tue Jul 21 16:39:19 CEST 2020
-version=7.3.1
