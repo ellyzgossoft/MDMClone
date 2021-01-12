@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="MatchRunKey" prompt="MatchRunKey?" promptNeeded="false" type="id_Integer" value=""/>
+    <contextParameter comment="" name="ScriptsDirectory" prompt="ScriptsDirectory?" promptNeeded="false" type="id_String" value="D:\data\Talend\lookup\REaDMatching\scripts"/>
+    <contextParameter comment="" name="StagingDirectory" prompt="StagingDirectory?" promptNeeded="false" type="id_String" value="D:\DATA\Matching\Staging\SCV_Sunlife\"/>
+    <contextParameter comment="" name="SleepInterval" prompt="SleepInterval?" promptNeeded="false" type="id_Long" value="1000"/>
+    <contextParameter comment="" name="ReferenceDataDirectoryInternal" prompt="ReferenceDataDirectoryInternal?" promptNeeded="false" type="id_String" value="D:\DATA\Matching\ReferenceData\SCV_APlan\"/>
+    <contextParameter comment="" name="ReferenceDataDirectoryExternal" prompt="ReferenceDataDirectoryExternal?" promptNeeded="false" type="id_String" value="D:\DATA\Matching\ReferenceData\Common\"/>
+    <contextParameter comment="" name="TempDataDirectory" prompt="TempDataDirectory?" promptNeeded="false" type="id_String" value="D:\DATA\Talend\Temp\sunlife"/>
+    <contextParameter comment="" name="MaximumGroupSize" prompt="MaximumGroupSize?" promptNeeded="false" type="id_String" value="-m 5000"/>
+    <contextParameter comment="" name="MatchingStagingDirectory" prompt="MatchingStagingDirectory?" promptNeeded="false" type="id_String" value="\\dev2\Matching\Staging\SCV_Sunlife\"/>
+    <contextParameter comment="" name="Matching_common_AdditionalParams" prompt="Matching_common_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="Matching_common_Database" prompt="Matching_common_Database?" promptNeeded="false" type="id_String" value="SCV_Sunlife"/>
+    <contextParameter comment="" name="Matching_common_Login" prompt="Matching_common_Login?" promptNeeded="false" type="id_String" value="TAC_ETL_USER"/>
+    <contextParameter comment="" name="Matching_common_Password" prompt="Matching_common_Password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:fs5vfx7YSJBNdpXQzhxYldz/42BPa8CI8vEnlpy69XsYx1QTsNLyjFDKRBwIwbmI"/>
+    <contextParameter comment="" name="Matching_common_Port" prompt="Matching_common_Port?" promptNeeded="false" type="id_String" value="1433"/>
+    <contextParameter comment="" name="Matching_common_Schema" prompt="Matching_common_Schema?" promptNeeded="false" type="id_String" value="common"/>
+    <contextParameter comment="" name="Matching_common_Server" prompt="Matching_common_Server?" promptNeeded="false" type="id_String" value="dev2"/>
+    <contextParameter comment="" name="SCV_AdditionalParams" prompt="SCV_AdditionalParams?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="SCV_Database" prompt="SCV_Database?" promptNeeded="false" type="id_String" value="SCV_Sunlife"/>
+    <contextParameter comment="" name="SCV_Login" prompt="SCV_Login?" promptNeeded="false" type="id_String" value="TAC_ETL_USER"/>
+    <contextParameter comment="" name="SCV_Password" prompt="SCV_Password?" promptNeeded="false" type="id_Password" value="enc:system.encryption.key.v1:fxoMbLNcsMZjkjZchawyn8MgCY4k+ROLGjyXZCtC7Ve7x2I/gB6AQx8Jj7xMKj9e"/>
+    <contextParameter comment="" name="SCV_Port" prompt="SCV_Port?" promptNeeded="false" type="id_String" value="1433"/>
+    <contextParameter comment="" name="SCV_Schema" prompt="SCV_Schema?" promptNeeded="false" type="id_String" value="common"/>
+    <contextParameter comment="" name="SCV_Schema_Common" prompt="SCV_Schema_Common?" promptNeeded="false" type="id_String" value="common"/>
+    <contextParameter comment="" name="SCV_Schema_ods" prompt="SCV_Schema_ods?" promptNeeded="false" type="id_String" value="ods"/>
+    <contextParameter comment="" name="SCV_Schema_Staging" prompt="SCV_Schema_Staging?" promptNeeded="false" type="id_String" value="staging"/>
+    <contextParameter comment="" name="SCV_Server" prompt="SCV_Server?" promptNeeded="false" type="id_String" value="dev2"/>
+    <contextParameter comment="" name="archive_folder" prompt="archive_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="errors_folder" prompt="errors_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="inbound_folder" prompt="inbound_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="matching_staging_folder" prompt="matching_staging_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="outbound_folder" prompt="outbound_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="staging_folder" prompt="staging_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="temp_folder" prompt="temp_folder?" promptNeeded="false" type="id_String" value=""/>
+    <contextParameter comment="" name="BATCH_KEY" prompt="BATCH_KEY?" promptNeeded="false" repositoryContextId="_7I0XgFqUEemdHZxQbeE8Yg" type="id_Integer" value="-1"/>
+    <contextParameter comment="" name="JOBCONFIG_PATH" prompt="JOBCONFIG_PATH?" promptNeeded="false" repositoryContextId="_7I0XgFqUEemdHZxQbeE8Yg" type="id_String" value="&quot;/data/Talend/temp/jobconfig_B1_A1.txt&quot;"/>
+    <contextParameter comment="" name="SETTINGS_PATH" prompt="SETTINGS_PATH?" promptNeeded="false" repositoryContextId="_7I0XgFqUEemdHZxQbeE8Yg" type="id_String" value="&quot;/data/Talend/Config&quot;"/>
+    <contextParameter comment="" name="TEMP_FILE" prompt="TEMP_FILE?" promptNeeded="false" repositoryContextId="_7I0XgFqUEemdHZxQbeE8Yg" type="id_String" value="&quot;/data/Talend/temp/batchkey.txt&quot;"/>
+    <contextParameter comment="" name="LOG_Schema" prompt="LOG_Schema?" promptNeeded="false" repositoryContextId="_w7OScEPoEemuyv8Cd_p8dg" type="id_String" value="local"/>
+  </context>
+  <parameters>
+    <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="32"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="true"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:Vr3KNcCnN7DO+41txcZ1f6e7k70QejIMid3twqll"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="true"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="true"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="true"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/Talend_6.3.1/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tMSSqlOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="JTDS"/>
+    <elementParameter field="TEXT" name="URL" show="false" value=""/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;OAPP1&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;Logging&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;instance=SQLEXPRESS&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.LOG_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;LOG_USER&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tJmKbR6SJxPGVA+p1yaxEjkx3IQhHRaprIQ6w2trH+7krP3q3M/GP6ETnrdmgJMsa/k="/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;Stats&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;Log&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;FlowMeter&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="true"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+    <routinesParameter id="_-CgygP1cEeSRDu9mW3oluQ" name="DataOperation"/>
+    <routinesParameter id="_-DQZYP1cEeSRDu9mW3oluQ" name="Mathematical"/>
+    <routinesParameter id="_-DQZZP1cEeSRDu9mW3oluQ" name="Numeric"/>
+    <routinesParameter id="_-DaKYP1cEeSRDu9mW3oluQ" name="Relational"/>
+    <routinesParameter id="_-DaKZP1cEeSRDu9mW3oluQ" name="StringHandling"/>
+    <routinesParameter id="_-DjUUP1cEeSRDu9mW3oluQ" name="TalendDataGenerator"/>
+    <routinesParameter id="_-DjUVP1cEeSRDu9mW3oluQ" name="TalendDate"/>
+    <routinesParameter id="_-DtFUP1cEeSRDu9mW3oluQ" name="TalendString"/>
+    <routinesParameter id="_rEDi0AnxEeWYXPGhPDbf1w" name="ReferenceMatch"/>
+    <routinesParameter id="_rsJs7qdMEeeVs5zqf6kWMg" name="DQTechnical"/>
+    <routinesParameter id="_rsAi_KdMEeeVs5zqf6kWMg" name="DataMasking"/>
+    <routinesParameter id="_rsJs5KdMEeeVs5zqf6kWMg" name="DataQualityDependencies"/>
+    <routinesParameter id="_rsJs4KdMEeeVs5zqf6kWMg" name="DataQuality"/>
+    <routinesParameter id="_rsJs6qdMEeeVs5zqf6kWMg" name="DqStringHandling"/>
+    <routinesParameter id="_rsTd4KdMEeeVs5zqf6kWMg" name="SQLike"/>
+    <routinesParameter id="_Ir2BACj2Eee2ONB52ZNYnQ" name="AUDIT"/>
+    <routinesParameter id="_7jj0gCmXEeeOn97uqAo7Jg" name="DB"/>
+    <routinesParameter id="_FgWDMCmXEeeOn97uqAo7Jg" name="JOB"/>
+    <routinesParameter id="_DTUj0DPQEee_nIuB25WIGQ" name="TBL_CHUNK"/>
+    <routinesParameter id="_Kfc3cMSYEeeGvbB7nw99aQ" name="CONTW"/>
+    <routinesParameter id="_-uAe4Cj1Eee2ONB52ZNYnQ" name="C"/>
+    <routinesParameter id="_Wh3J0CmfEeeOn97uqAo7Jg" name="DT"/>
+    <routinesParameter id="_4QcrUFyXEeert-B9akBK6A" name="HASHIT"/>
+    <routinesParameter id="_CpUd4Cj2Eee2ONB52ZNYnQ" name="L"/>
+    <routinesParameter id="_JIdE4JSsEeewE-oGE5AJug" name="Number"/>
+    <routinesParameter id="_9Jd1wCpwEeeo9pvhOIvptw" name="PATH"/>
+    <routinesParameter id="_cjhpwCvuEeeo9pvhOIvptw" name="REG_ARR"/>
+    <routinesParameter id="_nxsnsC_mEee5B_veg0lsKg" name="S"/>
+    <routinesParameter id="_k9ee0CmfEeeOn97uqAo7Jg" name="IMPORT_EXTERNAL_JARS"/>
+    <routinesParameter id="_t5XDYMt_EeetwrLokMQ_Xw" name="V"/>
+  </parameters>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="Boolean MatchRunKeyValid = false;&#10;Boolean MatchRunMetadataValid = false;&#10;&#10;&#10;if (context.MatchRunKey != null) {&#10;&#9;MatchRunKeyValid = true;&#10;}&#10;&#10;globalMap.put(&quot;MatchRunKeyValid&quot;,MatchRunKeyValid);&#10;globalMap.put(&quot;MatchRunMetadataValid&quot;,MatchRunMetadataValid);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1"/>
+  </node>
+  <node componentName="tDie" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;MatchRunKey is not an integer, Job Aborted&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_1"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="800">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_4"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="// Get the matching metadata&#10;Boolean PerformDeDupe = (Boolean)globalMap.get(&quot;PerformDeDupe&quot;);&#10;Boolean PerformReferenceMatch = false;&#10;String InternalReferenceMatchesInput = (String)globalMap.get(&quot;InternalReferenceMatches&quot;);&#10;String ExternalReferenceMatchesInput = (String)globalMap.get(&quot;ExternalReferenceMatches&quot;);&#10;&#10;int CreatedDateKey = (Integer)globalMap.get(&quot;CreatedDateKey&quot;);&#10;Date CreatedTime = (Date)globalMap.get(&quot;CreatedTime&quot;);&#10;ReferenceMatch UpdateReferenceMatch = null;&#10;&#10;// Format the metadata&#10;String CreatedTimeString = TalendDate.formatDate(&quot;HH:mm:ss.SSS&quot;, CreatedTime);&#10;&#10;// ==========================================================&#10;// Parse the Internal Reference Matches from the input string&#10;// ==========================================================&#10;List&lt;String&gt; ReferenceMatchesList = new ArrayList&lt;String&gt;();&#10;&#10;if ((InternalReferenceMatchesInput != null) &amp;&amp; (InternalReferenceMatchesInput.trim().length() &gt; 0)) {&#10;&#9;ReferenceMatchesList = Arrays.asList(InternalReferenceMatchesInput.split(&quot;\\s*,\\s*&quot;));&#10;}&#10;&#10;List&lt;ReferenceMatch&gt; ReferenceMatchesParsed = new ArrayList&lt;ReferenceMatch&gt;();&#10;&#10;int numToUpdate = 0;&#10;&#10;for(String item : ReferenceMatchesList) {&#10;&#9;List&lt;String&gt; itemSplit = Arrays.asList(item.split(&quot;\\s*\\|\\s*&quot;));&#10;&#9;&#10;&#9;if (itemSplit.size() != 3) {&#10;&#9;&#9;throw new IOException(&quot;Reference Match Types have to be in the format 'Dataset1|Y|Options,Dataset2|N|Options'&quot;);&#10;&#9;} else {&#10;&#9;&#9;ReferenceMatch aReferenceMatch = new ReferenceMatch(itemSplit.get(0), itemSplit.get(1), itemSplit.get(2));&#10;&#9;&#9;ReferenceMatchesParsed.add(aReferenceMatch);&#10;&#10;&#9;&#9;if (aReferenceMatch.getToUpdate().equals(&quot;Y&quot;)) {&#10;&#9;&#9;&#9;numToUpdate += 1;&#10;&#9;&#9;}&#10;&#9;}&#10;}&#10;&#10;if (numToUpdate &gt; 1) {&#10;&#9;throw new IOException(&quot;It is only possible to 'Update' Reference Match to one dataset&quot;);&#10;}&#10;&#10;// Sort the array of ReferenceMatches&#10;Collections.sort(ReferenceMatchesParsed, ReferenceMatch.ReferenceMatchComparator);&#10;&#10;// Separate the Reference Match to be included in the update as this is handles differently and takes priority&#10;if (numToUpdate == 1) {&#10;&#9;UpdateReferenceMatch = ReferenceMatchesParsed.get(0);&#10;&#9;ReferenceMatchesParsed.remove(0);&#10;&#9;PerformReferenceMatch = true;&#10;}&#10;&#10;// Store the Reference Match switch&#10;globalMap.put(&quot;PerformReferenceMatch&quot;, PerformReferenceMatch);&#10;globalMap.put(&quot;UpdateReferenceMatch&quot;, UpdateReferenceMatch);&#10;&#10;// Put the array of ReferenceMatches in the globalMap to iterate over later&#10;globalMap.put(&quot;InternalReferenceMatchObjects&quot;, ReferenceMatchesParsed);&#10;&#10;// ==========================================================&#10;// Parse the External Reference Matches from the input string&#10;// ==========================================================&#10;ReferenceMatchesList = new ArrayList&lt;String&gt;();&#10;&#10;if ((ExternalReferenceMatchesInput != null) &amp;&amp; (ExternalReferenceMatchesInput.trim().length() &gt; 0)) {&#10;&#9;ReferenceMatchesList = Arrays.asList(ExternalReferenceMatchesInput.split(&quot;\\s*,\\s*&quot;));&#10;}&#10;&#10;ReferenceMatchesParsed = new ArrayList&lt;ReferenceMatch&gt;();&#10;&#10;numToUpdate = 0;&#10;&#10;for(String item : ReferenceMatchesList) {&#10;&#9;List&lt;String&gt; itemSplit = Arrays.asList(item.split(&quot;\\s*\\|\\s*&quot;));&#10;&#9;&#10;&#9;if (itemSplit.size() != 3) {&#10;&#9;&#9;throw new IOException(&quot;Reference Match Types have to be in the format 'Dataset1|Y|Options,Dataset2|N|Options'&quot;);&#10;&#9;} else {&#10;&#9;&#9;ReferenceMatch aReferenceMatch = new ReferenceMatch(itemSplit.get(0), itemSplit.get(1), itemSplit.get(2));&#10;&#9;&#9;ReferenceMatchesParsed.add(aReferenceMatch);&#10;&#10;&#9;&#9;if (aReferenceMatch.getToUpdate().equals(&quot;Y&quot;)) {&#10;&#9;&#9;&#9;numToUpdate += 1;&#10;&#9;&#9;}&#10;&#9;}&#10;}&#10;&#10;if (numToUpdate &gt; 0) {&#10;&#9;throw new IOException(&quot;It isn't possible to 'Update' External Reference datasets&quot;);&#10;}&#10;&#10;// Sort the array of ReferenceMatches&#10;Collections.sort(ReferenceMatchesParsed, ReferenceMatch.ReferenceMatchComparator);&#10;&#10;// Put the array of ReferenceMatches in the globalMap to iterate over later&#10;globalMap.put(&quot;ExternalReferenceMatchObjects&quot;, ReferenceMatchesParsed);&#10;&#10;// Write the metadata to the log&#10;System.out.println(L.SPLIT+&quot;\nPerformDeDupe = &quot; + PerformDeDupe.toString());&#10;System.out.println(&quot;InternalReferenceMatchesInput = &quot; + InternalReferenceMatchesInput);&#10;System.out.println(&quot;CreatedDateKey = &quot; + String.valueOf(CreatedDateKey));&#10;System.out.println(&quot;CreatedTime = &quot; + CreatedTimeString);&#10;&#10;ReferenceMatch aReferenceDataset = (ReferenceMatch)globalMap.get(&quot;UpdateReferenceMatch&quot;);&#10;&#10;if (aReferenceDataset != null) {&#10;&#9;System.out.println(&quot;Update Reference Dataset Key --&gt; &quot; + aReferenceDataset.getReferenceDatasetKey() + &quot;, ToUpdate --&gt; &quot; + &#9;aReferenceDataset.getToUpdate() + &quot;, MatchConfigurationKey --&gt; &quot; + aReferenceDataset.getMatchConfigurationKey());&#10;}&#10;&#10;for (ReferenceMatch aReferenceMatch : ReferenceMatchesParsed) {&#10;&#9;System.out.println(&quot;External Reference Dataset Key --&gt; &quot; + aReferenceMatch.getReferenceDatasetKey() + &quot;, ToUpdate --&gt; &quot; + aReferenceMatch.getToUpdate() + &quot;, MatchConfigurationKey --&gt; &quot; + aReferenceMatch.getMatchConfigurationKey());&#10;}&#10;&#10;// Print out values for testing&#10;System.out.println(&quot;numToUpdate = &quot; + String.valueOf(numToUpdate));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="import java.util.List;&#10;import java.util.ArrayList;&#10;import java.util.Arrays;&#10;import java.util.Collections;&#10;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_4"/>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="1056">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_3"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="DB_EDL_Matching_02_Orchestration"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Default"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="_y526kJyWEemi__w3FJamZw"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="MatchRunKey"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.MatchRunKey"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ScriptsDirectory"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.ScriptsDirectory"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="StagingDirectory"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.StagingDirectory"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="SleepInterval"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.SleepInterval"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="DeDupeRequired"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="(Boolean)globalMap.get(&quot;PerformDeDupe&quot;)"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="UpdateReferenceMatch"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="globalMap.get(&quot;UpdateReferenceMatch&quot;)"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="InternalReferenceMatches"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="globalMap.get(&quot;InternalReferenceMatchObjects&quot;)"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ExternalReferenceMatches"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="globalMap.get(&quot;ExternalReferenceMatchObjects&quot;)"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ReferenceDataDirectoryInternal"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.ReferenceDataDirectoryInternal"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ReferenceDataDirectoryExternal"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.ReferenceDataDirectoryExternal"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="TempDataDirectory"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.TempDataDirectory"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="MaximumGroupSize"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.MaximumGroupSize"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_3"/>
+  </node>
+  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="416" posY="544">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMSSqlInput_2"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="HOST" value="context.Matching_common_Server"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER" value="JTDS"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="MSSQL"/>
+    <elementParameter field="TEXT" name="PORT" value="context.Matching_common_Port"/>
+    <elementParameter field="TEXT" name="DB_SCHEMA" value="context.Matching_common_Schema"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.Matching_common_Database"/>
+    <elementParameter field="TEXT" name="USER" value="context.Matching_common_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:yCR/VP6i9W62WYQBi5bIVevkFyIbRwwtKzD2nnr0cphfI6ShKXkjjO7D2mFJui+0Ertv39cXYSjQgr/0"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;Metadata_MatchRun&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT \&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.CreatedDateKey,&#10;&#9;&#9;\&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.CreatedTime,&#10;&#9;&#9;\&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.PerformDeDupe,&#10;&#9;&#9;\&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.ReferenceMatches,&#10;&#9;&#9;\&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.ExternalReferenceMatches&quot;&#10;+&quot;&#10;FROM&#9;\&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun&quot;&#13;&#10;+&quot;&#13;&#10;WHERE \&quot;&quot;+context.Matching_common_Schema+&quot;\&quot;.Metadata_MatchRun.MatchRunKey = &quot;+context.MatchRunKey"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="id_MSSQL"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.Matching_common_AdditionalParams"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="CreatedDateKey"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CreatedTime"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PerformDeDupe"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ReferenceMatches"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ExternalReferenceMatches"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="Metadata_MatchRun" name="tMSSqlInput_2">
+      <column defaultValue="(CONVERT([int],CONVERT([char](8),getdate(),(112))))" key="false" length="10" name="CreatedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),getdate()))'" key="false" length="12" name="CreatedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'((1))'" key="false" length="1" name="PerformDeDupe" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="ReferenceMatches" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="ExternalReferenceMatches" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="true" length="0" name="MatchRunKey" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="Description" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((-1))" key="false" length="10" name="StartedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),'00:00:00.000'))'" key="false" length="12" name="StartedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((-1))" key="false" length="10" name="CompletedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),'00:00:00.000'))'" key="false" length="12" name="CompletedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((1))" key="false" length="10" name="DeDupeMatchConfigurationKey" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="10" name="InsertAuditKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="10" name="UpdateAuditKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="544">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="CreatedDateKey"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CreatedTime"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PerformDeDupe"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ReferenceMatches"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ExternalReferenceMatches"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="Metadata_MatchRun" name="tLogRow_1">
+      <column defaultValue="(CONVERT([int],CONVERT([char](8),getdate(),(112))))" key="false" length="10" name="CreatedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),getdate()))'" key="false" length="12" name="CreatedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'((1))'" key="false" length="1" name="PerformDeDupe" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="ReferenceMatches" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="ExternalReferenceMatches" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="true" length="0" name="MatchRunKey" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="500" name="Description" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((-1))" key="false" length="10" name="StartedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),'00:00:00.000'))'" key="false" length="12" name="StartedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((-1))" key="false" length="10" name="CompletedDateKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="'(CONVERT([time](3),'00:00:00.000'))'" key="false" length="12" name="CompletedTime" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="((1))" key="false" length="10" name="DeDupeMatchConfigurationKey" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="10" name="InsertAuditKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="10" name="UpdateAuditKey" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="false">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+  </node>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="736" posY="544">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="false"/>
+    <elementParameter field="TABLE" name="MAP">
+      <elementValue elementRef="KEY" value="&quot;PerformDeDupe&quot;"/>
+      <elementValue elementRef="VALUE" value="PerformDeDupe"/>
+      <elementValue elementRef="KEY" value="&quot;InternalReferenceMatches&quot;"/>
+      <elementValue elementRef="VALUE" value="ReferenceMatches"/>
+      <elementValue elementRef="KEY" value="&quot;CreatedDateKey&quot;"/>
+      <elementValue elementRef="VALUE" value="CreatedDateKey"/>
+      <elementValue elementRef="KEY" value="&quot;CreatedTime&quot;"/>
+      <elementValue elementRef="VALUE" value="CreatedTime"/>
+      <elementValue elementRef="KEY" value="&quot;ExternalReferenceMatches&quot;"/>
+      <elementValue elementRef="VALUE" value="ExternalReferenceMatches"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowToIterate_1"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_5"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="Boolean MatchRunKeyValid = false;&#10;&#10;if (((Integer)globalMap.get(&quot;tFlowToIterate_1_NB_LINE&quot;)) &gt; 0) {&#10;  // MatchRunKey Exists!&#10;  MatchRunKeyValid = true;&#10;} else {&#10;  // MatchRunKey Doesn't Exist&#10;  MatchRunKeyValid = false;&#10;}&#10;&#10;globalMap.put(&quot;MatchRunKeyValid&quot;,MatchRunKeyValid);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_5"/>
+  </node>
+  <node componentName="tDie" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;MatchRunKey hasn't been set up in Matching.common.Metadata_MatchRun, Job Aborted&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_2"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="928">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="(&quot;Starting MatchRun: &quot; +context.MatchRunKey)"/>
+    <elementParameter field="TEXT" name="CODE" value="1"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="416" posY="1184">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="(&quot;Finished MatchRun: &quot; + context.MatchRunKey)"/>
+    <elementParameter field="TEXT" name="CODE" value="1"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="3"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="576" posY="1184">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_3"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="(&quot;Failed MatchRun: &quot; + context.MatchRunKey)"/>
+    <elementParameter field="TEXT" name="CODE" value="99"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_3"/>
+  </node>
+  <node componentName="tLogCatcher" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
+    <elementParameter field="CHECK" name="CATCH_JAVA_EXCEPTION" value="false"/>
+    <elementParameter field="CHECK" name="CATCH_TDIE" value="false"/>
+    <elementParameter field="CHECK" name="CATCH_TWARN" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_TACTIONFAILURE" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogCatcher_1">
+      <column defaultValue="" key="false" length="0" name="moment" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd HH:mm:ss&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="root_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="20" name="father_pid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="project" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="job" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="50" name="context" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="priority" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="type" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="origin" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="3" name="code" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="message"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_2">
+      <column key="false" length="255" name="message" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tJava_1" target="tMSSqlInput_2">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Boolean)globalMap.get(&quot;MatchRunKeyValid&quot;)) == true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If2"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tJava_1" target="tDie_1">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Boolean)globalMap.get(&quot;MatchRunKeyValid&quot;)) == false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_4" offsetLabelX="0" offsetLabelY="0" source="tJava_4" target="tWarn_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk8"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tRunJob_3" offsetLabelX="0" offsetLabelY="0" source="tRunJob_3" target="tWarn_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tRunJob_3" offsetLabelX="0" offsetLabelY="0" source="tRunJob_3" target="tWarn_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk10"/>
+  </connection>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tMSSqlInput_2" offsetLabelX="8" offsetLabelY="0" source="tMSSqlInput_2" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="MatchRunKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CreatedDateKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="StartedDateKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CompletedDateKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="PerformDeDupe"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ReferenceMatches"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="InsertAuditKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="UpdateAuditKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMSSqlInput_2" offsetLabelX="0" offsetLabelY="0" source="tMSSqlInput_2" target="tJava_5">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tFlowToIterate_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CreatedDateKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="CreatedTime"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="PerformDeDupe"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ReferenceMatches"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tJava_5" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tJava_5" target="tDie_2">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Boolean)globalMap.get(&quot;MatchRunKeyValid&quot;)) == false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If7"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="If" lineStyle="6" metaname="tJava_5" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tJava_5" target="tJava_4">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((Boolean)globalMap.get(&quot;MatchRunKeyValid&quot;)) == true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="If8"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="tRunJob_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk9"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tLogCatcher_1" offsetLabelX="0" offsetLabelY="0" source="tLogCatcher_1" target="tLogRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <note opaque="true" posX="32" posY="256" sizeHeight="64" sizeWidth="321" text="Initialise job, test for or prompt for a MatchRunKey"/>
+  <note opaque="true" posX="96" posY="384" sizeHeight="64" sizeWidth="257" text="Validate the MatchRunKey format"/>
+  <note opaque="true" posX="96" posY="512" sizeHeight="64" sizeWidth="257" text="Retrieve the MatchRun metadata&#13;&#10;(using context.MatchRunKey as parameter)"/>
+  <note opaque="true" posX="-32" posY="768" sizeHeight="97" sizeWidth="385" text="Create an ArrayList of the Reference Matches to perform&#13;&#10;and parse that a maximum of one is for update"/>
+  <note opaque="true" posX="-32" posY="1056" sizeHeight="64" sizeWidth="385" text="Run the DeDupe and Reference&#13;&#10;matches if required"/>
+  <note opaque="true" posX="-32" posY="672" sizeHeight="64" sizeWidth="321" text="Verify that the MatchRun has been set up"/>
+  <note opaque="true" posX="512" posY="768" sizeHeight="97" sizeWidth="481" text="Put some validation around what options are set&#13;&#10;i.e. you can't do a Reference match for update without a DeDupe match"/>
+  <note opaque="true" posX="-32" posY="928" sizeHeight="64" sizeWidth="385" text="Write log message to tie the MatchRunKey to the system_pid&#13;&#10;and Talend root_pid"/>
+  <note opaque="true" posX="-32" posY="1184" sizeHeight="64" sizeWidth="385" text="Log Completion"/>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Test MatchRunKey"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_4"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Setup Job"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_3"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Run Matching"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMSSqlInput_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Retrieve the Metadata for the given MatchRunKey"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_5"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Exists?"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="160;190;240"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="220;220;250"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Log Start"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Log Finish"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_3"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Log Error"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogCatcher_1"/>
+    <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Log to screen"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_70dc87ab-a5de-4a5d-be0f-def30169203f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>E3vrkNMRhLhWB1meoGymNUjQYtefDmG2ZcbdmF/NUYMsKOf8/smtziP+901QTymVrFM0EdR+QFwB
+CzfdcXk91Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_feaf6904-8569-4df4-8562-ee07f65693d4"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VSLtFHAOQ7s243h5/tidKZ9KQJgsALQaO6t+kkD+ba1epHWtaJh3ufpiUDFZr7QKvHOL018SSoTI
+D9yP0mDu+g==</DigestValue></Reference></SignedInfo><SignatureValue>OKeMKv22GX57HdqlOJBcH/YTZ70Bl8i2UZZNE0ip6IJ7OrNZfE3mciFLbBOUbDrdKiPYueaZdfUj
+GUHHa/BFEkytJlGhZf7YnWHcJt3Fa68e5/S7JDosaRAOdIG/hqhha8m0WD5e7eiwk9hMGTF6drZx
+LtDiE6yhtnKuvOcIL+uO6Q+1IcqDOiy+iMxK9ach2OPfk5AV0LtlJaViUaI6KskyCOvfQKYkI9Sg
+jb6xpfQBPOEJk5F2j4B8Apk2AeneQszUBSBc2lyGqEl8qBMfIhXiBRDzKkjyaqzPhQzZtJO+I3Vg
+We8IAFJH3zgnzq2/ve+jDOCCQck9vbqyVB3lag==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_feaf6904-8569-4df4-8562-ee07f65693d4" Target="#_70dc87ab-a5de-4a5d-be0f-def30169203f"><Timestamp>2021-01-12 09:24:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
